@@ -1,3 +1,4 @@
+//节点类
 template <typename T>
 class Node{
 public:
@@ -10,6 +11,7 @@ public:
     }
 };
 
+//链表类
 template <typename T>
 class LinkedList{
 private:
