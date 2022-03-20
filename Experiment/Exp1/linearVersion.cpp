@@ -1,3 +1,11 @@
+//测试样例
+//n, s, m
+//2 1 3  ---- 1 2
+//2 2 3  ---- 2 1
+//1 1 3  ---- 1
+//10 5 3 ---- 7 10 3 6 1 5 2 9 4 8
+//4 5 8  ---- 4 2 1 3
+
 #include <iostream>
 
 using namespace std;
@@ -24,20 +32,6 @@ public:
     bool output(int s, int m);
 };
 
-//bool arrList::output(int s, int m){
-//    s--;
-//    int count = 0;    //记录已经出去了几个人
-//    int total = maxsize;    //现有总人数
-//    for (int i = 0; i < maxsize; i++){
-//        cout<<arr[s];
-//        for (int j = s; j < total - s; j++){
-//            arr[j] = arr[j+1];    //后续元素往前补一位
-//            count++;
-//            total--;
-//        }
-//        s = (s + m - 1) %total;
-//    }
-//}
 
 int main() {
     int n, s, m;    //n为开始总人数，s为开始报数的位置，m为数m个人
@@ -50,7 +44,10 @@ int main() {
     total = n;      //初始化total
     //测试 10，5，3
     //答案7,10,3,6,1,5,2,9,4,8
-    s = (s + m) % 10 - 1;        //s=6
+    s = (s + m) % n - 1;        //s=6
+    if (s == -1){
+        s = n - 1;
+    }
     while (total > 0) {
         cout << newList.arr[s] << endl;
         total--;
