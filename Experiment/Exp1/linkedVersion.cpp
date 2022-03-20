@@ -1,3 +1,11 @@
+//测试样例
+//n, s, m
+//2 1 3  ---- 1 2
+//2 2 3  ---- 2 1
+//1 1 3  ---- 1
+//10 5 3 ---- 7 10 3 6 1 5 2 9 4 8
+//4 5 8  ---- 4 2 1 3
+
 #include <iostream>
 using namespace std;
 class Node{
@@ -29,12 +37,13 @@ int main(){
     current = head;
     current->value = 1;
     //建立链表
-    for (int i = 2; i <= 10; i++){
+    for (int i = 2; i <= n; i++){
         current->next = new Node();
         current->next->pre = current;
         current = current->next;
         current->next = head;
         current->value = i;
+        head->pre = current;
     }
 
     //输出
