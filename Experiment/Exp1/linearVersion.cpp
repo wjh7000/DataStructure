@@ -48,12 +48,8 @@ int main() {
     arrList newList(n);
     s--;            //数组从0开始
     total = n;      //初始化total
-    //int count = 0;
-
     //测试 10，5，3
-
     //答案7,10,3,6,1,5,2,9,4,8
-
     s = (s + m) % 10 - 1;        //s=6
     while (total > 0) {
         cout << newList.arr[s] << endl;
@@ -61,7 +57,7 @@ int main() {
         if (total == 0)
             break;
         newList.arr[s] = -1;
-        count = 3;
+        count = m;
         while (count > 0) {
             s = (s + 1) % n;
             if (newList.arr[s] != -1) {
@@ -69,7 +65,5 @@ int main() {
             }
         }
     }
-
-
     return 0;
 }
